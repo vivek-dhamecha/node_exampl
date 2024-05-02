@@ -4,7 +4,6 @@ const db = require('./db_3.js');
 const bodyparser = require('body-parser');
 const detail = require('./data_2.js');
 const menu_item = require('./menu.js');
-require('dotenv').config();
 const Person = require('./person.js');
 app.use(bodyparser.json());
 
