@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
-// const url = "mongodb://localhost:27017/NEW_DATABASE";
+const url = "mongodb://localhost:27017/NEW_DATABASE";
 
 
 //online link
-const url ="mongodb+srv://vivek:vivek@cluster0.5k0uhzf.mongodb.net/"
+// const url ="mongodb+srv://vivek:vivek@cluster0.5k0uhzf.mongodb.net/"
+
 
 
 // require('dotenv').config();

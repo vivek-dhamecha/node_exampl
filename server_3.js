@@ -4,8 +4,31 @@ const db = require('./db_3.js');
 const bodyparser = require('body-parser');
 const detail = require('./data_2.js');
 const menu_item = require('./menu.js');
+const passport = require('./auth.js');
 const Person = require('./person.js');
 app.use(bodyparser.json());
+
+
+
+
+app.use(passport.initialize());
+
+//middle wear functions for make  a date 
+const longrequest = (req , res , next)=>{
+console.log(`${new Date().toLocaleDateString()} request made : ${req.url}`);
+next();
+}
+
+//for longrequest used in all function than use app.use
+app.use(longrequest);
+
+const localAuthorizedMiddleware = passport.authenticate('local' , {session:false});
+app.get('/' , localAuthorizedMiddleware ,  function(req , res){
+   res.send("Welcome to node js program");
+ });
+
+
+
 
 
 
